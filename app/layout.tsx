@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
 import { links, owner } from "@/data/portfolio";
+import { siteUrl } from "@/data/site";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -16,9 +17,7 @@ const fraunces = Fraunces({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://github.com/basharalbashier",
-  ),
+  metadataBase: new URL(siteUrl),
   title: `${owner.name} — ${owner.title}`,
   description:
     "Senior Software Engineer specializing in Flutter, WebRTC real-time media, iOS native development, and scalable full-stack architectures.",
@@ -67,7 +66,7 @@ export default function RootLayout({
     "@type": "Person",
     name: owner.name,
     jobTitle: owner.title,
-    url: links.github,
+    url: siteUrl,
     sameAs: [links.github, links.linkedin],
     knowsAbout: [
       "Flutter",

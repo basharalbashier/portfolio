@@ -125,6 +125,17 @@ body {
   animation: pulse-slow 2.4s ease-in-out infinite;
 }
 
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* Glass & Card utility */
 .card-shine {
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
@@ -134,4 +145,11 @@ body {
   transform: translateY(-2px);
   border-color: var(--color-accent);
   box-shadow: 0 12px 28px -10px var(--color-accent-glow);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
 }

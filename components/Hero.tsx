@@ -11,13 +11,10 @@ export default function Hero() {
       <div className="mx-auto max-w-6xl px-5 pb-16 pt-12 sm:px-8 sm:pt-20">
         <div className="grid gap-12 md:grid-cols-[1.25fr_0.75fr] md:items-center md:gap-10 lg:gap-16">
           <div>
-            {/* Status pill */}
+            {/* Professional identity */}
             <div className="rise-in inline-flex items-center gap-2.5 rounded-full border border-line bg-paper-deep/80 px-3.5 py-1.5 text-xs font-medium text-ink backdrop-blur-sm">
-              <span className="relative flex h-2 w-2">
-                <span className="pulse-dot absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-600" />
-              </span>
-              <span>{owner.status}</span>
+              <span className="h-2 w-2 rounded-full bg-accent" />
+              <span>{owner.title}</span>
               <span className="text-ink-muted">·</span>
               <span className="text-ink-soft">{owner.location}</span>
             </div>
@@ -26,11 +23,16 @@ export default function Hero() {
               id="hero-heading"
               className="rise-in mt-6 font-display text-4xl leading-[1.12] font-semibold tracking-tight text-balance sm:text-6xl lg:text-7xl"
             >
-              Building mobile products where <span className="text-accent italic font-normal">real time</span> matters.
+              Building mobile products where{" "}
+              <span className="text-accent italic font-normal">real time</span>{" "}
+              matters.
             </h1>
 
             <p className="rise-in-delayed mt-6 max-w-xl text-lg leading-relaxed text-ink-soft">
-              I&apos;m {owner.firstName} — Senior Software Engineer crafting Flutter apps, WebRTC video calling, and full-stack cloud architectures. From short-video editing to instant streaming, I engineer software that feels instant.
+              I&apos;m {owner.firstName} — a Senior Software Engineer who builds
+              Flutter apps, WebRTC video calling, and the full-stack systems
+              behind them. From short-video editing to live streaming, I
+              engineer software that feels instant.
             </p>
 
             <div className="rise-in-delayed mt-8 flex flex-wrap items-center gap-3.5">
@@ -59,6 +61,8 @@ export default function Hero() {
                   width={profileImage.width}
                   height={profileImage.height}
                   priority
+                  placeholder="blur"
+                  blurDataURL={profileImage.blurDataURL}
                   sizes="(min-width: 768px) 340px, 288px"
                   className="h-auto w-full object-cover transition-transform duration-700 hover:scale-105"
                 />
@@ -85,6 +89,20 @@ export default function Hero() {
               </p>
             </div>
           ))}
+        </div>
+
+        {/* Scroll indicator */}
+        <div className="rise-in-delayed-2 mt-12 hidden sm:flex justify-center">
+          <a
+            href="#about"
+            aria-label="Scroll to about section"
+            className="flex flex-col items-center gap-1.5 text-ink-muted transition-colors hover:text-accent group"
+          >
+            <span className="text-[10px] tracking-[0.2em] uppercase font-medium">Scroll</span>
+            <span className="flex h-7 w-5 items-start justify-center rounded-full border border-current pt-1.5">
+              <span className="h-2 w-0.5 animate-bounce rounded-full bg-current" />
+            </span>
+          </a>
         </div>
       </div>
     </section>

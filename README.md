@@ -75,7 +75,7 @@ The résumé link (`Download résumé`) points to `/Bashar-Albashier-CV.docx`. R
 
 - Project descriptions are intentionally factual to each public repository. Add case studies, screenshots, or live-demo URLs only when verified.
 
-Contact email lives in `data/portfolio.ts` (`links.email`, `links.emailDisplay`) and renders in `components/Contact.tsx` and `components/Footer.tsx`.
+Contact actions use the owner-confirmed WhatsApp number, LinkedIn, and GitHub. The source profile does not include a verified email address; add one to `data/portfolio.ts` before introducing a direct email action or contact form.
 
 ## Quality Checks
 

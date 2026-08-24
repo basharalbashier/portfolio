@@ -10,7 +10,6 @@ export const owner = {
   title: "Senior Software Engineer",
   experienceYears: "5+",
   location: "London, UK",
-  status: "Available for select opportunities",
   bio: [
     "I'm a senior software engineer with more than five years of experience designing, building, and maintaining production applications — from Flutter mobile products to the backend systems behind them.",
     "My work centers on real-time communication and media-rich mobile engineering: WebRTC video calling, short-video editing, voice notes, and instant messaging. I care about the details users feel — performance, reliability, and interfaces that behave the way people expect.",
@@ -25,10 +24,10 @@ export const owner = {
 } as const;
 
 export const links = {
-  email: "mailto:basharalbashier@gmail.com",
-  emailDisplay: "basharalbashier@gmail.com",
   github: "https://github.com/basharalbashier",
   linkedin: "https://linkedin.com/in/basharalbashier",
+  whatsapp: "https://wa.me/201203886767",
+  whatsappDisplay: "+20 120 388 6767",
   resume: "/Bashar-Albashier.pdf",
   resumePdf: "/Bashar-Albashier.pdf",
   resumeDocx: "/Bashar-Albashier-CV.docx",
@@ -39,6 +38,8 @@ export const profileImage = {
   alt: "Portrait of Bashar Albashier",
   width: 1200,
   height: 1200,
+  blurDataURL:
+    "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4QBMRXhpZgAATU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAACqADAAQAAAABAAAACgAAAAD/wAARCAAKAAoDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9sAQwACAgICAgIDAgIDBQMDAwUGBQUFBQYIBgYGBgYICggICAgICAoKCgoKCgoKDAwMDAwMDg4ODg4PDw8PDw8PDw8P/9sAQwECAgIEBAQHBAQHEAsJCxAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQ/90ABAAB/9oADAMBAAIRAxEAPwDwU3PhayBDn7au2ON7iHzGhsZV/fFpZI5EjXMaMP3iuMBuAQa+hFtPCzKGTUbVlIyCJVII/OvnL9lVVuPhb8f4bgebGPAk8m1vmG9JPlbB7rk4PUZrzTwqSfC+jkn/AJc7f/0WtRXy1UXZSb/pHYsZ7RK8dj//2Q==",
 } as const;
 
 export type SkillGroup = {

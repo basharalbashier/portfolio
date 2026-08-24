@@ -1,4 +1,5 @@
 import { projects } from "@/data/portfolio";
+import { Reveal } from "./Reveal";
 
 export default function Projects() {
   return (
@@ -8,8 +9,9 @@ export default function Projects() {
       className="border-b border-line bg-paper-deep/40"
     >
       <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
-        <div className="flex flex-wrap items-baseline justify-between gap-4">
-          <div className="flex items-baseline gap-4">
+        <Reveal>
+          <div className="flex flex-wrap items-baseline justify-between gap-4">
+            <div className="flex items-baseline gap-4">
             <span
               aria-hidden="true"
               className="font-display text-sm font-semibold text-accent"
@@ -20,9 +22,9 @@ export default function Projects() {
               id="work-heading"
               className="font-display text-3xl font-semibold tracking-tight sm:text-4xl"
             >
-              Selected Work & Open Source
+              Selected Work &amp; Open Source
             </h2>
-          </div>
+            </div>
 
           <a
             href="https://github.com/basharalbashier?tab=repositories"
@@ -35,21 +37,25 @@ export default function Projects() {
               aria-hidden="true"
               className="transition-transform group-hover:translate-x-1"
             >
-              →
+              {"\u2192"}
             </span>
           </a>
-        </div>
+          </div>
+        </Reveal>
 
-        <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink-soft">
-          Public repositories and architectural work reflecting real-time calling, native iOS tooling, media editing, and cross-platform Flutter engineering.
-        </p>
+        <Reveal delay="100">
+          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink-soft">
+            Public repositories spanning real-time video calling, native iOS
+            tooling, media editing, and cross-platform Flutter engineering.
+          </p>
+        </Reveal>
 
         <div className="mt-14 grid gap-6 md:grid-cols-2">
-          {projects.map((project) => (
-            <article
-              key={project.id}
-              className="card-shine group flex flex-col justify-between rounded-2xl border border-line bg-paper-card p-7 shadow-sm transition-all"
-            >
+          {projects.map((project, i) => (
+            <Reveal key={project.id} delay={i % 2 === 0 ? "0" : "200"}>
+              <article
+                className="card-shine group flex h-full flex-col justify-between rounded-2xl border border-line bg-paper-card p-7 shadow-sm transition-all"
+              >
               <div>
                 <div className="flex items-center justify-between">
                   <span className="font-display text-2xl font-bold text-accent/80 select-none">
@@ -116,7 +122,8 @@ export default function Projects() {
                   <span className="text-xs text-ink-muted">github.com</span>
                 </div>
               </div>
-            </article>
+              </article>
+            </Reveal>
           ))}
         </div>
       </div>

@@ -9,6 +9,7 @@ import {
   profileImage,
   skillGroups,
 } from "@/data/portfolio";
+import { Reveal } from "./Reveal";
 
 export default function About() {
   const [selectedGroup, setSelectedGroup] = useState<string>("All");
@@ -43,7 +44,8 @@ export default function About() {
         </div>
 
         <div className="mt-12 grid gap-14 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
-          <div>
+          <Reveal>
+            <div>
             <div className="space-y-5 text-lg leading-relaxed text-ink-soft">
               {owner.bio.map((paragraph) => (
                 <p key={paragraph.slice(0, 32)}>{paragraph}</p>
@@ -126,14 +128,18 @@ export default function About() {
                 ))}
               </div>
             </div>
-          </div>
+            </div>
+          </Reveal>
 
           {/* Right Column: Sticky Portrait preview & Categorized Skills */}
-          <aside className="lg:sticky lg:top-24 lg:self-start space-y-8">
+          <Reveal delay="200">
+            <aside className="space-y-8 lg:sticky lg:top-24 lg:self-start">
             <figure className="relative hidden overflow-hidden rounded-2xl border border-line bg-paper-deep lg:block shadow-md">
               <Image
                 src={profileImage.src}
                 alt=""
+                placeholder="blur"
+                blurDataURL={profileImage.blurDataURL}
                 width={profileImage.width}
                 height={profileImage.height}
                 sizes="360px"
@@ -191,7 +197,8 @@ export default function About() {
                 ))}
               </div>
             </div>
-          </aside>
+            </aside>
+          </Reveal>
         </div>
       </div>
     </section>

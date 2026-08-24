@@ -45,7 +45,7 @@ export default function Contact() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`Message Bashar on WhatsApp at ${links.whatsappDisplay}`}
-                  className="inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3 text-sm font-medium text-paper transition-all hover:bg-accent hover:shadow-md"
+                  className="inline-flex items-center gap-2 rounded-md bg-ink px-6 py-3 text-sm font-medium text-paper transition-colors hover:bg-accent"
                 >
                   Message on WhatsApp
                   <span aria-hidden="true">↗</span>
@@ -54,7 +54,7 @@ export default function Contact() {
                   href={links.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full border border-line bg-paper-card px-5 py-3 text-sm font-medium text-ink transition-all hover:border-accent hover:text-accent"
+                  className="inline-flex items-center gap-2 rounded-md border border-line px-5 py-3 text-sm font-medium text-ink transition-colors hover:border-accent hover:text-accent"
                 >
                   Connect on LinkedIn
                   <span aria-hidden="true">↗</span>
@@ -63,7 +63,7 @@ export default function Contact() {
                   href={links.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full border border-line bg-paper-card px-5 py-3 text-sm font-medium text-ink transition-all hover:border-accent hover:text-accent"
+                  className="inline-flex items-center gap-2 rounded-md border border-line px-5 py-3 text-sm font-medium text-ink transition-colors hover:border-accent hover:text-accent"
                 >
                   View GitHub
                   <span aria-hidden="true">↗</span>
@@ -79,9 +79,9 @@ export default function Contact() {
                   <a
                     href={links.resumePdf}
                     download
-                    className="card-shine inline-flex items-center gap-3 rounded-xl border border-line bg-paper-card px-4 py-3 text-sm font-medium text-ink"
+                    className="card-shine inline-flex items-center gap-3 rounded-md border border-line px-4 py-3 text-sm font-medium text-ink"
                   >
-                    <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent/10 text-xs font-bold text-accent">
+                    <span className="flex h-8 w-8 items-center justify-center border-r border-line pr-3 text-xs font-bold text-accent">
                       PDF
                     </span>
                     <span>
@@ -98,9 +98,9 @@ export default function Contact() {
                   <a
                     href={links.resumeDocx}
                     download
-                    className="card-shine inline-flex items-center gap-3 rounded-xl border border-line bg-paper-card px-4 py-3 text-sm font-medium text-ink"
+                    className="card-shine inline-flex items-center gap-3 rounded-md border border-line px-4 py-3 text-sm font-medium text-ink"
                   >
-                    <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-500/10 text-xs font-bold text-blue-600">
+                    <span className="flex h-8 w-8 items-center justify-center border-r border-line pr-3 text-xs font-bold text-blue-600">
                       DOCX
                     </span>
                     <span>
@@ -121,7 +121,7 @@ export default function Contact() {
           </Reveal>
 
           <Reveal delay="200">
-            <aside className="rounded-2xl border border-line bg-paper-card p-6 shadow-sm sm:p-8">
+            <aside className="border-t border-line pt-7 lg:border-t-0 lg:border-l lg:pt-0 lg:pl-10">
               <p className="text-xs font-semibold tracking-[0.18em] text-accent uppercase">
                 Best way to connect
               </p>

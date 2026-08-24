@@ -27,7 +27,7 @@ export default function FloatingBackToTop() {
       type="button"
       onClick={scrollToTop}
       aria-label="Back to top"
-      className="fixed right-5 bottom-5 z-50 flex h-11 w-11 items-center justify-center rounded-full border border-line bg-paper-card text-ink shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:border-accent hover:text-accent hover:shadow-xl sm:right-6 sm:bottom-6"
+      className="fixed right-5 bottom-5 z-50 flex h-11 w-11 items-center justify-center rounded-md border border-line bg-paper text-ink shadow-sm transition-colors hover:border-accent hover:text-accent sm:right-6 sm:bottom-6"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

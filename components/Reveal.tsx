@@ -21,12 +21,12 @@ export function Reveal({
   className = "",
   delay = "0",
 }: RevealProps) {
-  const { ref, visible } = useScrollReveal<HTMLDivElement>();
+  const { ref, ready, visible } = useScrollReveal<HTMLDivElement>();
 
   return (
     <div
       ref={ref}
-      className={`reveal ${visible ? "reveal-visible" : ""} ${delayMap[delay]} ${className}`}
+      className={`reveal ${ready ? "reveal-ready" : ""} ${visible ? "reveal-visible" : ""} ${delayMap[delay]} ${className}`}
     >
       {children}
     </div>

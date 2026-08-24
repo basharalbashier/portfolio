@@ -115,7 +115,7 @@ export default function About() {
                 {education.map((item) => (
                   <div
                     key={item.degree}
-                    className="rounded-xl border border-line bg-paper-card p-5 transition-all hover:border-accent/50 hover:shadow-sm"
+                    className="border-t border-line py-5"
                   >
                     <dt className="font-semibold text-ink">{item.degree}</dt>
                     <dd className="mt-2 text-sm text-ink-soft">
@@ -134,7 +134,7 @@ export default function About() {
           {/* Right Column: Sticky Portrait preview & Categorized Skills */}
           <Reveal delay="200">
             <aside className="space-y-8 lg:sticky lg:top-24 lg:self-start">
-            <figure className="relative hidden overflow-hidden rounded-2xl border border-line bg-paper-deep lg:block shadow-md">
+            <figure className="relative hidden overflow-hidden rounded-lg border border-line bg-paper-deep lg:block">
               <Image
                 src={profileImage.src}
                 alt=""
@@ -147,7 +147,7 @@ export default function About() {
               />
             </figure>
 
-            <div className="rounded-2xl border border-line bg-paper-card p-6 shadow-sm">
+            <div className="border-y border-line py-6">
               <div className="flex items-center justify-between border-b border-line pb-4">
                 <h3 className="font-display text-xl font-semibold">
                   Technical Skills
@@ -166,8 +166,8 @@ export default function About() {
                     onClick={() => setSelectedGroup(cat)}
                     className={`rounded-full px-3 py-1 text-xs font-medium transition-all ${
                       selectedGroup === cat
-                        ? "bg-accent text-paper shadow-sm"
-                        : "border border-line bg-paper text-ink-soft hover:border-ink hover:text-ink"
+                        ? "bg-ink text-paper"
+                        : "border border-line text-ink-soft hover:border-ink hover:text-ink"
                     }`}
                   >
                     {cat}
@@ -187,7 +187,7 @@ export default function About() {
                       {group.items.map((skill) => (
                         <li
                           key={skill}
-                          className="rounded-lg border border-line bg-paper px-3 py-1.5 text-xs font-medium text-ink transition-colors hover:border-accent hover:text-accent"
+                          className="border-b border-line px-1 py-1.5 text-xs font-medium text-ink transition-colors hover:border-accent hover:text-accent"
                         >
                           {skill}
                         </li>

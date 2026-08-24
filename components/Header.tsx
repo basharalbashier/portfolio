@@ -80,8 +80,8 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 border-b border-line bg-paper/85 backdrop-blur-md transition-colors duration-300">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-8">
+    <header className="sticky top-0 z-50 border-b border-line bg-paper/95 backdrop-blur-md transition-colors duration-300">
+      <div className="mx-auto flex h-[4.5rem] max-w-6xl items-center justify-between px-5 sm:px-8">
         <a
           href="#top"
           className="group flex items-center gap-2 font-display text-lg font-semibold tracking-tight transition-colors hover:text-accent"
@@ -128,7 +128,7 @@ export default function Header() {
             type="button"
             onClick={toggleTheme}
             aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
-            className="flex h-9 w-9 items-center justify-center rounded-full border border-line bg-paper-deep text-ink-soft transition-all hover:border-accent hover:text-accent"
+            className="flex h-9 w-9 items-center justify-center rounded-md border border-line text-ink-soft transition-colors hover:border-accent hover:text-accent"
           >
             {isDark ? (
               <svg
@@ -165,7 +165,7 @@ export default function Header() {
 
           <a
             href="#contact"
-            className="rounded-full bg-ink px-4 py-2 text-sm font-medium text-paper transition-all hover:bg-accent hover:shadow-md"
+            className="rounded-md bg-ink px-4 py-2 text-sm font-medium text-paper transition-colors hover:bg-accent"
           >
             Get in touch
           </a>
@@ -241,7 +241,7 @@ export default function Header() {
         id="mobile-menu"
         ref={panelRef}
         hidden={!open}
-        className="border-t border-line bg-paper md:hidden shadow-lg"
+        className="border-t border-line bg-paper md:hidden"
       >
         <nav
           aria-label="Mobile"
@@ -263,7 +263,7 @@ export default function Header() {
           <a
             href="#contact"
             onClick={() => setOpen(false)}
-            className="mt-3 rounded-full bg-ink px-4 py-3 text-center text-sm font-medium text-paper transition-colors hover:bg-accent"
+            className="mt-3 rounded-md bg-ink px-4 py-3 text-center text-sm font-medium text-paper transition-colors hover:bg-accent"
           >
             Get in touch
           </a>

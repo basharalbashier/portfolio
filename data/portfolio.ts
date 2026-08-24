@@ -165,6 +165,7 @@ export type Project = {
   title: string;
   kind: string;
   description: string;
+  details: readonly string[];
   tags: readonly string[];
   href: string;
   linkLabel: string;
@@ -182,7 +183,12 @@ export const projects: readonly Project[] = [
     title: "iOS Image & Video Editor",
     kind: "Native platform work",
     description:
-      "A Flutter plugin wrapping a native iOS photo and video editor — crop, rotate, filters, drawing, mosaic, and more, exposed to Dart with localization support.",
+      "A Flutter plugin that brings native iOS photo and video editing into Flutter applications by integrating HXPHPicker behind a Dart-facing API.",
+    details: [
+      "Exposes native crop, rotate, filter, drawing, and mosaic tools to Flutter applications.",
+      "Includes localization support and an example application to make integration easier to evaluate.",
+      "Connects Flutter code with native iOS media capabilities while keeping the consuming API straightforward.",
+    ],
     tags: ["Dart", "SwiftUI", "UIKit", "iOS"],
     href: "https://github.com/basharalbashier/bash_ios_image_and_video_editor",
     linkLabel: "View repository",
@@ -193,7 +199,12 @@ export const projects: readonly Project[] = [
     title: "Pro Image Editor",
     kind: "Media tooling",
     description:
-      "A Dart repository focused on image editing — an area Bashar works in daily, from short-video editing pipelines to native media tooling on iOS.",
+      "A substantial Dart image-editing codebase covering modular editing tools, configurable interfaces, and reusable interaction patterns for Flutter applications.",
+    details: [
+      "Contains paint, text, crop-and-rotate, filter, blur, emoji, sticker, and tuning editor modules.",
+      "Provides multiple interface systems, including grounded, frosted-glass, WhatsApp-style, and custom profile-editing designs.",
+      "Includes configurable callbacks, state-history import and export, localization models, and reusable editor components.",
+    ],
     tags: ["Dart", "Flutter", "Image editing"],
     href: "https://github.com/basharTezda/pro_image_editor",
     linkLabel: "View repository",
@@ -204,7 +215,12 @@ export const projects: readonly Project[] = [
     title: "Maternity Hospital Medical Record",
     kind: "Production healthcare system",
     description:
-      "The medical record application built for Omdurman Maternity Hospital — led by Bashar with a team of five, using Flutter and Laravel with automated testing.",
+      "A Flutter medical-record application developed for Omdurman Maternity Hospital, with Bashar leading a five-developer team and contributing across the application and Laravel-backed workflows.",
+    details: [
+      "Covers patient registration, maternity and gynaecology records, antenatal care, delivery notes, and clinical examinations.",
+      "Includes neonatal, ICU, laboratory, pharmacy, nutrition, surgery, ultrasound, and statistics workflows in one application.",
+      "The supplied professional record documents team leadership, automated-testing practices, and reliability improvements.",
+    ],
     tags: ["Flutter", "Laravel", "Healthcare"],
     href: "https://github.com/basharalbashier/Omdorman-Maternity-hospital-medical-record",
     linkLabel: "View repository",
@@ -215,7 +231,12 @@ export const projects: readonly Project[] = [
     title: "WebRTC Signaling Server",
     kind: "Real-time communication",
     description:
-      "A WebRTC signaling server written in Dart, built to connect peers for calling demos and reusable across real-time Flutter applications.",
+      "A WebRTC signalling service created to connect peers for a Flutter calling demonstration and explore the server-side coordination required by real-time communication.",
+    details: [
+      "Includes signalling entry points and WebSocket connection management for coordinating peers.",
+      "Packages the service with Docker and Docker Compose configuration for repeatable local execution.",
+      "Includes a compiled Flutter web client that can be used alongside the signalling service for demonstration and testing.",
+    ],
     tags: ["Dart", "WebRTC", "Signaling"],
     href: "https://github.com/basharalbashier/webRTC-server",
     linkLabel: "View repository",
@@ -226,8 +247,13 @@ export const projects: readonly Project[] = [
     title: "Dart Realtime API",
     kind: "Real-time infrastructure",
     description:
-      "A Dart WebSocket implementation powering chat APIs — designed to stream any data type between clients and services in real time.",
-    tags: ["Dart", "WebSockets", "Chat"],
+      "A Serverpod-based Dart backend that models users, conversations, and messages for a real-time chat service, with local infrastructure and cloud-deployment configuration included.",
+    details: [
+      "Defines endpoints and generated protocol models for users, conversations, and messages.",
+      "Uses PostgreSQL and Redis through a Docker Compose development environment.",
+      "Includes deployment scaffolding for AWS and Google Cloud alongside staging and production configuration.",
+    ],
+    tags: ["Dart", "Serverpod", "PostgreSQL", "Redis"],
     href: "https://github.com/basharalbashier/dart-realtime-api",
     linkLabel: "View repository",
   },

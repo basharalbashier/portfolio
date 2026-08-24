@@ -5,103 +5,120 @@ export default function Projects() {
     <section
       id="work"
       aria-labelledby="work-heading"
-      className="border-b border-line bg-paper-deep/50"
+      className="border-b border-line bg-paper-deep/40"
     >
       <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
-        <div className="flex items-baseline gap-4">
-          <span
-            aria-hidden="true"
-            className="font-display text-sm font-semibold text-accent"
+        <div className="flex flex-wrap items-baseline justify-between gap-4">
+          <div className="flex items-baseline gap-4">
+            <span
+              aria-hidden="true"
+              className="font-display text-sm font-semibold text-accent"
+            >
+              02
+            </span>
+            <h2
+              id="work-heading"
+              className="font-display text-3xl font-semibold tracking-tight sm:text-4xl"
+            >
+              Selected Work & Open Source
+            </h2>
+          </div>
+
+          <a
+            href="https://github.com/basharalbashier?tab=repositories"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-accent-deep"
           >
-            02
-          </span>
-          <h2
-            id="work-heading"
-            className="font-display text-3xl font-semibold tracking-tight sm:text-4xl"
-          >
-            Selected work
-          </h2>
+            <span>All Repositories on GitHub</span>
+            <span
+              aria-hidden="true"
+              className="transition-transform group-hover:translate-x-1"
+            >
+              →
+            </span>
+          </a>
         </div>
 
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink-soft">
-          Public repositories that reflect what I build — real-time calling,
-          media editing, and cross-platform rendering. Each links directly to
-          its source on GitHub.
+          Public repositories and architectural work reflecting real-time calling, native iOS tooling, media editing, and cross-platform Flutter engineering.
         </p>
 
-        <ol className="mt-16 space-y-0 border-t border-ink">
+        <div className="mt-14 grid gap-6 md:grid-cols-2">
           {projects.map((project) => (
-            <li
+            <article
               key={project.id}
-              className="grid items-start gap-6 border-b border-line py-10 sm:py-12 md:grid-cols-[7rem_1fr] md:gap-10"
+              className="card-shine group flex flex-col justify-between rounded-2xl border border-line bg-paper-card p-7 shadow-sm transition-all"
             >
-              <span
-                aria-hidden="true"
-                className="font-display text-5xl font-semibold text-line select-none sm:text-6xl"
-              >
-                {project.index}
-              </span>
+              <div>
+                <div className="flex items-center justify-between">
+                  <span className="font-display text-2xl font-bold text-accent/80 select-none">
+                    {project.index}
+                  </span>
+                  <span className="rounded-full bg-paper px-3 py-1 text-xs font-semibold tracking-wider text-accent uppercase ring-1 ring-line">
+                    {project.kind}
+                  </span>
+                </div>
 
-              <article>
-                <p className="text-xs font-semibold tracking-wider text-accent uppercase">
-                  {project.kind}
-                </p>
-                <h3 className="mt-2 font-display text-2xl font-semibold tracking-tight sm:text-3xl">
+                <h3 className="mt-4 font-display text-2xl font-semibold tracking-tight text-ink group-hover:text-accent transition-colors">
                   {project.title}
-                  {project.isFork ? (
-                    <span className="ml-3 inline-flex items-center rounded-full border border-line px-2 py-0.5 align-middle text-xs font-normal text-ink-soft">
+                  {project.isFork && (
+                    <span className="ml-2 inline-flex items-center rounded-full border border-line px-2 py-0.5 text-xs font-normal text-ink-soft">
                       Fork
                     </span>
-                  ) : null}
+                  )}
                 </h3>
-                <p className="mt-4 max-w-2xl leading-relaxed text-ink-soft">
+
+                <p className="mt-3 leading-relaxed text-ink-soft text-sm sm:text-base">
                   {project.description}
                 </p>
+              </div>
 
+              <div className="mt-8 border-t border-line-subtle pt-5">
                 <ul
                   aria-label="Technologies"
-                  className="mt-5 flex flex-wrap gap-1.5"
+                  className="flex flex-wrap gap-1.5"
                 >
                   {project.tags.map((tag) => (
                     <li
                       key={tag}
-                      className="rounded-full bg-paper px-2.5 py-1 text-xs text-ink-soft ring-1 ring-line"
+                      className="rounded-md bg-paper px-2.5 py-1 text-xs font-medium text-ink-soft ring-1 ring-line-subtle"
                     >
                       {tag}
                     </li>
                   ))}
                 </ul>
 
-                <a
-                  href={project.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group mt-6 inline-flex items-center gap-2 text-sm font-medium text-accent-deep underline decoration-accent/40 underline-offset-4 transition-colors hover:text-accent"
-                >
-                  {project.linkLabel}
-                  <span
-                    aria-hidden="true"
-                    className="transition-transform group-hover:translate-x-0.5"
+                <div className="mt-5 flex items-center justify-between">
+                  <a
+                    href={project.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-accent transition-all group-hover:text-accent-deep"
                   >
-                    ↗
-                  </span>
-                </a>
-              </article>
-            </li>
-          ))}
-        </ol>
+                    <span>{project.linkLabel}</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                      />
+                    </svg>
+                  </a>
 
-        <p className="mt-10 text-sm text-ink-soft">
-          More on GitHub —{" "}
-          <a
-            href="https://github.com/basharalbashier?tab=repositories"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-medium text-accent-deep underline decoration-accent/40 underline-offset-4 hover:text-accent"
-          >
-            github.com/basharalbashier ↗
-          </a>
-        </p>
+                  <span className="text-xs text-ink-muted">github.com</span>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );

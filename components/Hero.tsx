@@ -8,59 +8,84 @@ export default function Hero() {
       aria-labelledby="hero-heading"
       className="relative overflow-hidden border-b border-line"
     >
-      <div className="mx-auto grid max-w-6xl gap-12 px-5 pb-16 pt-14 sm:px-8 sm:pt-20 md:grid-cols-[1.2fr_0.8fr] md:items-center md:gap-10 lg:gap-16">
-        <div>
-          <p className="rise-in flex items-center gap-3 text-sm font-medium tracking-wide text-accent uppercase">
-            <span aria-hidden="true" className="h-px w-8 bg-accent" />
-            {owner.title} · {owner.experienceYears} years
-          </p>
+      <div className="mx-auto max-w-6xl px-5 pb-16 pt-12 sm:px-8 sm:pt-20">
+        <div className="grid gap-12 md:grid-cols-[1.25fr_0.75fr] md:items-center md:gap-10 lg:gap-16">
+          <div>
+            {/* Status pill */}
+            <div className="rise-in inline-flex items-center gap-2.5 rounded-full border border-line bg-paper-deep/80 px-3.5 py-1.5 text-xs font-medium text-ink backdrop-blur-sm">
+              <span className="relative flex h-2 w-2">
+                <span className="pulse-dot absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-600" />
+              </span>
+              <span>{owner.status}</span>
+              <span className="text-ink-muted">·</span>
+              <span className="text-ink-soft">{owner.location}</span>
+            </div>
 
-          <h1
-            id="hero-heading"
-            className="rise-in mt-6 font-display text-5xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-6xl lg:text-7xl"
-          >
-            Building mobile products where real time matters.
-          </h1>
-
-          <p className="rise-in-delayed mt-6 max-w-xl text-lg leading-relaxed text-ink-soft">
-            I&apos;m {owner.firstName} — I engineer Flutter apps, WebRTC video
-            calling, and the full-stack systems behind them. From short-video
-            editing to instant messaging, I ship software that feels instant.
-          </p>
-
-          <div className="rise-in-delayed mt-9 flex flex-wrap items-center gap-4">
-            <a
-              href="#work"
-              className="rounded-full bg-ink px-6 py-3 text-sm font-medium text-paper transition-colors hover:bg-accent"
+            <h1
+              id="hero-heading"
+              className="rise-in mt-6 font-display text-4xl leading-[1.12] font-semibold tracking-tight text-balance sm:text-6xl lg:text-7xl"
             >
-              View selected work
-            </a>
-            <a
-              href={links.resume}
-              download
-              className="rounded-full border border-ink px-6 py-3 text-sm font-medium transition-colors hover:border-accent hover:text-accent"
-            >
-              Download résumé ↓
-            </a>
+              Building mobile products where <span className="text-accent italic font-normal">real time</span> matters.
+            </h1>
+
+            <p className="rise-in-delayed mt-6 max-w-xl text-lg leading-relaxed text-ink-soft">
+              I&apos;m {owner.firstName} — Senior Software Engineer crafting Flutter apps, WebRTC video calling, and full-stack cloud architectures. From short-video editing to instant streaming, I engineer software that feels instant.
+            </p>
+
+            <div className="rise-in-delayed mt-8 flex flex-wrap items-center gap-3.5">
+              <a
+                href="#work"
+                className="rounded-full bg-ink px-6 py-3 text-sm font-medium text-paper transition-all hover:bg-accent hover:shadow-lg"
+              >
+                View selected work →
+              </a>
+              <a
+                href={links.resumePdf}
+                download
+                className="rounded-full border border-line bg-paper-card px-5 py-3 text-sm font-medium text-ink transition-all hover:border-accent hover:text-accent hover:shadow-sm"
+              >
+                Download résumé (PDF) ↓
+              </a>
+            </div>
           </div>
+
+          <figure className="rise-in relative mx-auto w-full max-w-xs md:max-w-none">
+            <div className="relative overflow-hidden rounded-t-[140px] rounded-b-3xl border border-line bg-paper-deep p-2 shadow-2xl transition-transform duration-500 hover:scale-[1.01]">
+              <div className="overflow-hidden rounded-t-[132px] rounded-b-2xl bg-paper">
+                <Image
+                  src={profileImage.src}
+                  alt={profileImage.alt}
+                  width={profileImage.width}
+                  height={profileImage.height}
+                  priority
+                  sizes="(min-width: 768px) 340px, 288px"
+                  className="h-auto w-full object-cover transition-transform duration-700 hover:scale-105"
+                />
+              </div>
+            </div>
+            <figcaption className="mt-3.5 text-center text-xs tracking-wider text-ink-soft uppercase font-medium">
+              {owner.name} · {owner.title}
+            </figcaption>
+          </figure>
         </div>
 
-        <figure className="rise-in relative mx-auto w-full max-w-xs md:max-w-none">
-          <div className="relative overflow-hidden rounded-t-full border border-line bg-paper-deep shadow-[0_24px_48px_-24px_rgba(28,25,23,0.35)]">
-            <Image
-              src={profileImage.src}
-              alt={profileImage.alt}
-              width={profileImage.width}
-              height={profileImage.height}
-              priority
-              sizes="(min-width: 768px) 320px, 288px"
-              className="h-auto w-full object-cover"
-            />
-          </div>
-          <figcaption className="mt-4 text-center text-xs tracking-wide text-ink-soft uppercase">
-            {owner.name}
-          </figcaption>
-        </figure>
+        {/* Quick Highlights / Stats Strip */}
+        <div className="rise-in-delayed-2 mt-14 grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4 border-t border-line pt-8">
+          {owner.stats.map((stat) => (
+            <div
+              key={stat.label}
+              className="rounded-xl border border-line-subtle bg-paper-card/70 p-4 transition-all hover:border-line hover:shadow-sm"
+            >
+              <p className="font-display text-2xl font-bold tracking-tight text-accent sm:text-3xl">
+                {stat.value}
+              </p>
+              <p className="mt-1 text-xs font-medium text-ink-soft">
+                {stat.label}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

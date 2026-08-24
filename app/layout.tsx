@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
+import { links, owner } from "@/data/portfolio";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -8,36 +9,104 @@ const inter = Inter({
   display: "swap",
 });
 
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  variable: "--font-fraunces",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://github.com/basharalbashier",
   ),
-  title: "Bashar Albashier — Senior Software Engineer",
+  title: `${owner.name} — ${owner.title}`,
   description:
-    "Senior Software Engineer with 5+ years of experience building Flutter mobile apps, WebRTC real-time communication, and full-stack systems.",
+    "Senior Software Engineer specializing in Flutter, WebRTC real-time media, iOS native development, and scalable full-stack architectures.",
+  authors: [{ name: owner.name, url: links.github }],
+  keywords: [
+    "Bashar Albashier",
+    "Flutter Engineer",
+    "Senior Mobile Engineer",
+    "WebRTC Dart",
+    "iOS Developer",
+    "Full-Stack Engineer",
+    "LiveKit",
+    "Software Architecture",
+  ],
   openGraph: {
-    title: "Bashar Albashier — Senior Software Engineer",
+    title: `${owner.name} — ${owner.title}`,
     description:
-      "Flutter, real-time communication, and full-stack engineering. Selected work, experience, and contact.",
+      "Flutter, WebRTC real-time communication, and scalable systems engineering. Selected work, experience, and contact.",
     type: "website",
+    locale: "en_GB",
     images: [
       {
         url: "/images/profile-v2.jpg",
         width: 1200,
         height: 1200,
-        alt: "Portrait of Bashar Albashier",
+        alt: `Portrait of ${owner.name}`,
       },
     ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: `${owner.name} — ${owner.title}`,
+    description:
+      "Senior Software Engineer specializing in Flutter, WebRTC, and Full-Stack systems.",
+    images: ["/images/profile-v2.jpg"],
+  },
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: owner.name,
+    jobTitle: owner.title,
+    url: links.github,
+    sameAs: [links.github, links.linkedin],
+    knowsAbout: [
+      "Flutter",
+      "Dart",
+      "WebRTC",
+      "iOS Development",
+      "SwiftUI",
+      "LiveKit",
+      "Full-Stack Development",
+      "Real-time Systems",
+    ],
+  };
+
   return (
     <html
       lang="en"
-      className={`${inter.variable} h-full antialiased`}
+      suppressHydrationWarning
+      className={`${inter.variable} ${fraunces.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col font-sans">{children}</body>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                const stored = localStorage.getItem('theme');
+                const dark = stored ? stored === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (dark) document.documentElement.classList.add('dark');
+              } catch (e) {}
+            `,
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
+      <body className="min-h-full flex flex-col font-sans transition-colors duration-300">
+        {children}
+      </body>
     </html>
   );
 }

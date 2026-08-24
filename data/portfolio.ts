@@ -10,10 +10,17 @@ export const owner = {
   title: "Senior Software Engineer",
   experienceYears: "5+",
   location: "London, UK",
+  status: "Available for select opportunities",
   bio: [
     "I'm a senior software engineer with more than five years of experience designing, building, and maintaining production applications — from Flutter mobile products to the backend systems behind them.",
     "My work centers on real-time communication and media-rich mobile engineering: WebRTC video calling, short-video editing, voice notes, and instant messaging. I care about the details users feel — performance, reliability, and interfaces that behave the way people expect.",
     "Across healthcare, delivery, e-commerce, and social products, I've led teams, shipped features used in production every day, and kept pushing quality through testing, refactoring, and honest measurement.",
+  ],
+  stats: [
+    { value: "5+", label: "Years Experience" },
+    { value: "Flutter & Dart", label: "Core Specialty" },
+    { value: "WebRTC & Real-time", label: "Media & Streaming" },
+    { value: "Full-Stack", label: "Backend & Cloud" },
   ],
 } as const;
 
@@ -22,7 +29,9 @@ export const links = {
   emailDisplay: "basharalbashier@gmail.com",
   github: "https://github.com/basharalbashier",
   linkedin: "https://linkedin.com/in/basharalbashier",
-  resume: "/Bashar-Albashier-CV.docx",
+  resume: "/Bashar-Albashier.pdf",
+  resumePdf: "/Bashar-Albashier.pdf",
+  resumeDocx: "/Bashar-Albashier-CV.docx",
 } as const;
 
 export const profileImage = {

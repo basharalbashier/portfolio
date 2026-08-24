@@ -1,0 +1,17 @@
+node_modules
+.next
+.git
+.gitignore
+Dockerfile
+docker-compose.yml
+.dockerignore
+README.md
+AGENTS.md
+CLAUDE.md
+.env*
+*.log
+
+# Owner source files (copies live in public/)
+ChatGPT Image*.png
+Bashar-Albashier.pdf
+*.docx
